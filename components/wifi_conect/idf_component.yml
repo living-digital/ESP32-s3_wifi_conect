@@ -1,0 +1,18 @@
+# Para agregar este componente a otro proyecto tienes dos opciones:
+# 1) Copia su carpeta a components del nuevo proyecto
+# 2) Suponiendo esta estructura:
+#
+# ~/esp/
+# ├── wifi01/                      ← proyecto original con el componente
+# │   └── components/
+# │       └── wifi_conect/
+# ├── otro_proyecto/              ← tu nuevo proyecto donde lo quieres usar
+# │   └── main/
+#
+# idf.py add-dependency ../wifi01/components/wifi_conect
+#
+
+version: "1.0.0"
+description: Componente para conectar el ESP32 a WiFi con IP estática o por DHCP
+dependencies:
+  idf: ">=5.0"
