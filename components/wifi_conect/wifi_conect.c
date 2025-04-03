@@ -8,6 +8,8 @@
 #include "string.h"
 #include "esp_system.h"
 #include "esp_err.h"
+#include "esp_netif_ip_addr.h"
+
 
 static const char *TAG = "wifi_conect";
 
@@ -125,8 +127,7 @@ esp_err_t wifi_conect(const char *ssid, const char *password, const char *ip, co
 }
 
 
-#include "esp_netif_ip_addr.h"
-
+// Devuelve la IP actual.
 const char* wifi_conect_get_ip(void)
 {
     static char ip_str[16]; // espacio para IP tipo "xxx.xxx.xxx.xxx"
@@ -145,4 +146,30 @@ const char* wifi_conect_get_ip(void)
 
     esp_ip4addr_ntoa(&ip_info.ip, ip_str, sizeof(ip_str));
     return ip_str;
+}
+
+
+// Desconecta el ESP32 de la red WiFi actual y detiene el driver WiFi.
+esp_err_t wifi_conect_disconnect(void)
+{
+    ESP_LOGI(TAG, "Desconectando de la red WiFi...");
+
+    esp_err_t err;
+
+    // Detener el WiFi (esto implica desconexión)
+    err = esp_wifi_stop();
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Error al detener WiFi: %s", esp_err_to_name(err));
+        return err;
+    }
+
+    // Opcional: liberar recursos si no volverás a conectarte en esta sesión
+    err = esp_wifi_deinit();
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Error al desinicializar WiFi: %s", esp_err_to_name(err));
+        return err;
+    }
+
+    ESP_LOGI(TAG, "WiFi desconectado correctamente.");
+    return ESP_OK;
 }

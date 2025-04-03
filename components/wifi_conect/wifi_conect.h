@@ -19,3 +19,9 @@ esp_err_t wifi_conect(
  * El puntero apunta a una cadena estática, no hace falta liberarla.
  */
 const char* wifi_conect_get_ip(void);
+
+/**
+ * @brief Desconecta el ESP32 de la red WiFi actual y detiene el driver WiFi.
+ * @return esp_err_t ESP_OK si fue exitoso, otro código de error si falla.
+ */
+esp_err_t wifi_conect_disconnect(void);

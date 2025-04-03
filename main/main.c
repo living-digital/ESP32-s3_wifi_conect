@@ -29,4 +29,13 @@ void app_main(void)
     printf("IP actual: %s\n", ip);
     printf("Regresamos al main...\n");
 
+    printf("Desconexion wifi\n");
+    esp_err_t result = wifi_conect_disconnect();
+    if (result == ESP_OK) {
+        printf("Desconectado de la red WiFi.\n");
+    } else {
+        printf("Error al desconectar: %s\n", esp_err_to_name(result));
+    }
+    printf("Regresamos al main...\n");
+
 }
