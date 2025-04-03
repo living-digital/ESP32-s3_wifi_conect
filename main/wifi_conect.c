@@ -86,8 +86,13 @@ esp_err_t wifi_conect(const char *ssid, const char *password, const char *ip, co
 
     // Esperar conexión
     ESP_LOGI(TAG, "Connecting to WiFi...");
-    EventBits_t bits = xEventGroupWaitBits(wifi_event_group, WIFI_CONNECTED_BIT,
-                                           pdFALSE, pdTRUE, pdMS_TO_TICKS(100000));
+    EventBits_t bits = xEventGroupWaitBits(
+        wifi_event_group, 
+        WIFI_CONNECTED_BIT,
+        pdFALSE, 
+        pdTRUE, 
+        pdMS_TO_TICKS(100000)
+    );
 
     if (bits & WIFI_CONNECTED_BIT) {
         ESP_LOGI(TAG, "Connected to SSID: %s", ssid);
