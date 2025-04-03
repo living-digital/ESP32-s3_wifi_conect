@@ -24,4 +24,9 @@ void app_main(void)
     // wifi_conect("MOVISTAR_PLUS_606E", "111D3321BD3B5C34AA26", "192.168.18.250", "192.168.18.1", "255.255.255.0");
     printf("Regresamos al main...\n");
 
+    printf("Consultamos la ip\n");
+    const char * ip = wifi_conect_get_ip();
+    printf("IP actual: %s\n", ip);
+    printf("Regresamos al main...\n");
+
 }

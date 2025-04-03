@@ -29,6 +29,7 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base,
     }
 }
 
+
 // Función principal para conectarse a WiFi con o sin IP estática
 esp_err_t wifi_conect(const char *ssid, const char *password, const char *ip, const char *gw, const char *netmask)
 {
@@ -121,4 +122,27 @@ esp_err_t wifi_conect(const char *ssid, const char *password, const char *ip, co
         ESP_LOGE(TAG, "Failed to connect.");
         return ESP_FAIL;
     }
+}
+
+
+#include "esp_netif_ip_addr.h"
+
+const char* wifi_conect_get_ip(void)
+{
+    static char ip_str[16]; // espacio para IP tipo "xxx.xxx.xxx.xxx"
+    esp_netif_t* netif = esp_netif_get_handle_from_ifkey("WIFI_STA_DEF");
+
+    if (netif == NULL) {
+        ESP_LOGW(TAG, "No se pudo obtener el handle de la interfaz STA");
+        return NULL;
+    }
+
+    esp_netif_ip_info_t ip_info;
+    if (esp_netif_get_ip_info(netif, &ip_info) != ESP_OK) {
+        ESP_LOGW(TAG, "No se pudo obtener la IP");
+        return NULL;
+    }
+
+    esp_ip4addr_ntoa(&ip_info.ip, ip_str, sizeof(ip_str));
+    return ip_str;
 }
