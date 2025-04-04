@@ -67,5 +67,15 @@ Verifica el canal y banda de frecuencia de tu red
 
 Puedes consultar la documentación de ESP-IDF para interpretar más códigos de error
 
+## Sistema de versionado: vX.Y.Z
+
+Cada número tiene un propósito específico:
+
+Major (X) – Cambios incompatibles: Se incrementa cuando haces cambios que rompen compatibilidad con versiones anteriores.
+
+Minor (Y) – Nuevas funcionalidades compatibles: Se incrementa cuando agregas nuevas funciones o mejoras, pero sin romper lo que ya existía.
+
+Patch (Z) – Corrección de errores o mejoras menores:Se incrementa cuando haces correcciones, mejoras internas o ajustes, pero sin agregar ni quitar funcionalidades públicas.
+
 ## Notas:
 Desarrollado con ESP-IDF para ESP32-S3
