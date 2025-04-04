@@ -1,4 +1,4 @@
-# Install script for directory: /home/david/esp/wifi01/main
+# Install script for directory: /home/david/esp/ESP32-s3_wifi_conect/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

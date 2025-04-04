@@ -20,13 +20,15 @@ void app_main(void)
     printf("Inicio de main\n");
 
     printf("Lanzamos wifi_conect()\n");
-    wifi_conect("elArreglador", "1234567890", "192.168.43.101", "192.168.43.1", "255.255.255.0");
-    // wifi_conect("MOVISTAR_PLUS_606E", "111D3321BD3B5C34AA26", "192.168.18.250", "192.168.18.1", "255.255.255.0");
+    // wifi_conect("elArreglador", "1234567890", "192.168.43.101", "192.168.43.1", "255.255.255.0");
+    wifi_conect("aaaMOVISTAR_606E", "111D3321BD3B5C34AA26", "192.168.18.250", "192.168.18.1", "255.255.255.0");
     printf("Regresamos al main...\n");
 
-    printf("Consultamos la ip\n");
-    const char * ip = wifi_conect_get_ip();
-    printf("IP actual: %s\n", ip);
+    printf("Consultamos la ip si hay conexion wifi\n");
+    if (wifi_conect_is_connected()){
+        const char * ip = wifi_conect_get_ip();
+        printf("IP actual: %s\n", ip);
+    }
     printf("Regresamos al main...\n");
 
     printf("Desconexion wifi\n");

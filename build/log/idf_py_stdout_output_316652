@@ -1,0 +1,580 @@
+[0;32mI (103) esp_image: segment 1: paddr=00028b7c vaddr=3fc96c00 size:   ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40048836
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1450
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (26) boot: ESP-IDF v5.1.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr  3 2025 16:32:57[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.2[0m
+[0;32mI (30) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (34) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c080020 size=18b54h (101204) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=00028b7c vaddr=3fc96c00 size=044a8h ( 17576) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0002d02c vaddr=40374000 size=02fech ( 12268) load[0m
+[0;32mI (110) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=7f1f4h (520692) map[0m
+[0;32mI (208) esp_image: segment 4: paddr=000af21c vaddr=40376fec size=0fbf0h ( 64496) load[0m
+[0;32mI (230) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (230) boot: Disabling RNG early entropy source...[0m
+[0;32mI (240) cpu_start: Multicore app[0m
+[0;32mI (240) cpu_start: Pro cpu up.[0m
+[0;32mI (240) cpu_start: Starting app cpu, entry point is 0x4037549c[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (255) cpu_start: Pro cpu start user code[0m
+[0;32mI (255) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (255) cpu_start: Application information:[0m
+[0;32mI (255) cpu_start: Project name:     hello_world[0m
+[0;32mI (259) cpu_start: App version:      41496e7-dirty[0m
+[0;32mI (264) cpu_start: Compile time:     Apr  3 2025 16:32:45[0m
+[0;32mI (269) cpu_start: ELF file SHA256:  e06ed229...[0m
+[0;32mI (273) cpu_start: ESP-IDF:          v5.1.2[0m
+[0;32mI (277) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (281) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (285) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (289) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (295) heap_init: At 3FC9EA08 len 0004AD08 (299 KiB): DRAM[0m
+[0;32mI (300) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (306) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (311) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (317) spi_flash: detected chip: gd[0m
+[0;32mI (320) spi_flash: flash io: dio[0m
+[0;32mI (323) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (329) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (335) app_start: Starting scheduler on CPU0[0m
+[0;32mI (339) app_start: Starting scheduler on CPU1[0m
+[0;32mI (339) main_task: Started on CPU0[0m
+[0;32mI (349) main_task: Calling app_main()[0m
+Inicio de main
+Lanzamos wifi_conect()
+[0;32mI (359) wifi_conect: Usando IP estática: 192.168.18.250[0m
+[0;32mI (369) pp: pp rom version: e7ae62f[0m
+[0;32mI (369) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (389) wifi:wifi driver task: 3fca8a64, prio:23, stack:6656, core=0[0m
+[0;32mI (389) wifi:wifi firmware version: 91b9630[0m
+[0;32mI (389) wifi:wifi certification version: v7.0[0m
+[0;32mI (389) wifi:config NVS flash: enabled[0m
+[0;32mI (389) wifi:config nano formating: disabled[0m
+[0;32mI (399) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (399) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (399) wifi:Init management short buffer num: 32[0m
+[0;32mI (409) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (409) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (419) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (419) wifi:Init static rx buffer num: 10[0m
+[0;32mI (429) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (429) wifi_init: rx ba win: 6[0m
+[0;32mI (429) wifi_init: tcpip mbox: 32[0m
+[0;32mI (429) wifi_init: udp mbox: 6[0m
+[0;32mI (439) wifi_init: tcp mbox: 6[0m
+[0;32mI (439) wifi_init: tcp tx win: 5744[0m
+[0;32mI (439) wifi_init: tcp rx win: 5744[0m
+[0;32mI (449) wifi_init: tcp mss: 1440[0m
+[0;32mI (449) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (449) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (469) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13[0m
+[0;33mW (469) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;32mI (519) wifi:mode : sta (dc:da:0c:57:09:38)[0m
+[0;32mI (519) wifi:enable tsf[0m
+[0;32mI (519) wifi_conect: Connecting to WiFi...[0m
+[0;33mW (2929) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (5339) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (7749) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (10159) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (12569) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (14979) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (17389) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (19799) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (22209) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (24619) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (27029) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (29439) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (31849) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (34259) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (36669) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (39079) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (41489) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (43899) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (46309) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (48719) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (51129) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (53539) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (55949) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (58359) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (60769) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (63179) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (65589) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (67999) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (70409) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (72819) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (75229) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (77639) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (80049) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (82459) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (84869) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (87279) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (89689) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (92099) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (94509) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (96919) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (99329) wifi_conect: Disconnected, reason: 201[0m
+[1;31mE (100519) wifi_conect: Failed to connect.[0m
+Regresamos al main...
+Consultamos la ip
+[0;33mW (100519) wifi:Haven't to connect to a suitable AP now![0m
+[0;33mW (100519) wifi_conect: No conectado. No se puede obtener IP.[0m
+Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x400556d5  PS      : 0x00060a30  A0      : 0x82070b8e  A1      : 0x3fca22d0  
+A2      : 0x00000000  A3      : 0xfffffffc  A4      : 0x000000ff  A5      : 0x0000ff00  
+A6      : 0x00ff0000  A7      : 0xff000000  A8      : 0x00000000  A9      : 0x3fca2290  
+A10     : 0x3fca22b0  A11     : 0x00000000  A12     : 0x00060620  A13     : 0x0000000c  
+A14     : 0xffffffef  A15     : 0x00000001  SAR     : 0x00000004  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000000  LBEG    : 0x400556d5  LEND    : 0x400556e5  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x400556d2:0x3fca22d0 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: e06ed229
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375868
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1450
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (26) boot: ESP-IDF v5.1.2 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Apr  3 2025 16:32:57[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.2[0m
+[0;32mI (29) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (33) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c080020 size=18b54h (101204) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=00028b7c vaddr=3fc96c00 size=044a8h ( 17576) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0002d02c vaddr=40374000 size=02fech ( 12268) load[0m
+[0;32mI (110) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=7f1f4h (520692) map[0m
+[0;32mI (207) esp_image: segment 4: paddr=000af21c vaddr=40376fec size=0fbf0h ( 64496) load[0m
+[0;32mI (230) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (230) boot: Disabling RNG early entropy source...[0m
+[0;32mI (239) cpu_start: Multicore app[0m
+[0;32mI (240) cpu_start: Pro cpu up.[0m
+[0;32mI (240) cpu_start: Starting app cpu, entry point is 0x4037549c[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (254) cpu_start: Pro cpu start user code[0m
+[0;32mI (254) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (254) cpu_start: Application information:[0m
+[0;32mI (255) cpu_start: Project name:     hello_world[0m
+[0;32mI (259) cpu_start: App version:      41496e7-dirty[0m
+[0;32mI (263) cpu_start: Compile time:     Apr  3 2025 16:32:45[0m
+[0;32mI (268) cpu_start: ELF file SHA256:  e06ed229...[0m
+[0;32mI (273) cpu_start: ESP-IDF:          v5.1.2[0m
+[0;32mI (277) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (280) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (284) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (288) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (294) heap_init: At 3FC9EA08 len 0004AD08 (299 KiB): DRAM[0m
+[0;32mI (300) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (305) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (310) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (317) spi_flash: detected chip: gd[0m
+[0;32mI (319) spi_flash: flash io: dio[0m
+[0;32mI (322) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (328) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (334) app_start: Starting scheduler on CPU0[0m
+[0;32mI (338) app_start: Starting scheduler on CPU1[0m
+[0;32mI (338) main_task: Started on CPU0[0m
+[0;32mI (348) main_task: Calling app_main()[0m
+Inicio de main
+Lanzamos wifi_conect()
+[0;32mI (378) wifi_conect: Usando IP estática: 192.168.18.250[0m
+[0;32mI (378) pp: pp rom version: e7ae62f[0m
+[0;32mI (378) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (388) wifi:wifi driver task: 3fca8ba4, prio:23, stack:6656, core=0[0m
+[0;32mI (398) wifi:wifi firmware version: 91b9630[0m
+[0;32mI (398) wifi:wifi certification version: v7.0[0m
+[0;32mI (398) wifi:config NVS flash: enabled[0m
+[0;32mI (398) wifi:config nano formating: disabled[0m
+[0;32mI (398) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (408) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (408) wifi:Init management short buffer num: 32[0m
+[0;32mI (418) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (418) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (428) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (428) wifi:Init static rx buffer num: 10[0m
+[0;32mI (428) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (438) wifi_init: rx ba win: 6[0m
+[0;32mI (438) wifi_init: tcpip mbox: 32[0m
+[0;32mI (438) wifi_init: udp mbox: 6[0m
+[0;32mI (448) wifi_init: tcp mbox: 6[0m
+[0;32mI (448) wifi_init: tcp tx win: 5744[0m
+[0;32mI (448) wifi_init: tcp rx win: 5744[0m
+[0;32mI (458) wifi_init: tcp mss: 1440[0m
+[0;32mI (458) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (458) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (468) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13[0m
+[0;32mI (508) wifi:mode : sta (dc:da:0c:57:09:38)[0m
+[0;32mI (508) wifi:enable tsf[0m
+[0;32mI (508) wifi_conect: Connecting to WiFi...[0m
+[0;33mW (2918) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (5328) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (7738) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (10148) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (12558) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (14968) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (17378) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (19788) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (22198) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (24608) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (27018) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (29428) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (31838) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (34248) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (36658) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (39068) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (41478) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (43888) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (46298) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (48708) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (51118) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (53528) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (55938) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (58348) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (60758) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (63168) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (65578) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (67988) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (70398) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (72808) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (75218) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (77628) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (80038) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (82448) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (84858) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (87268) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (89678) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (92088) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (94498) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (96908) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (99318) wifi_conect: Disconnected, reason: 201[0m
+[1;31mE (100508) wifi_conect: Failed to connect.[0m
+Regresamos al main...
+Consultamos la ip
+[0;33mW (100508) wifi:Haven't to connect to a suitable AP now![0m
+[0;33mW (100508) wifi_conect: No conectado. No se puede obtener IP.[0m
+Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x400556d5  PS      : 0x00060a30  A0      : 0x82070b8e  A1      : 0x3fca22d0  
+A2      : 0x00000000  A3      : 0xfffffffc  A4      : 0x000000ff  A5      : 0x0000ff00  
+A6      : 0x00ff0000  A7      : 0xff000000  A8      : 0x00000000  A9      : 0x3fca2290  
+A10     : 0x3fca22b0  A11     : 0x00000000  A12     : 0x00060620  A13     : 0x0000000c  
+A14     : 0xffffffef  A15     : 0x00000001  SAR     : 0x00000004  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000000  LBEG    : 0x400556d5  LEND    : 0x400556e5  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x400556d2:0x3fca22d0 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: e06ed229
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375868
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1450
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (26) boot: ESP-IDF v5.1.2 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Apr  3 2025 16:32:57[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.2[0m
+[0;32mI (29) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (33) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c080020 size=18b54h (101204) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=00028b7c vaddr=3fc96c00 size=044a8h ( 17576) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0002d02c vaddr=40374000 size=02fech ( 12268) load[0m
+[0;32mI (110) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=7f1f4h (520692) map[0m
+[0;32mI (207) esp_image: segment 4: paddr=000af21c vaddr=40376fec size=0fbf0h ( 64496) load[0m
+[0;32mI (230) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (230) boot: Disabling RNG early entropy source...[0m
+[0;32mI (239) cpu_start: Multicore app[0m
+[0;32mI (240) cpu_start: Pro cpu up.[0m
+[0;32mI (240) cpu_start: Starting app cpu, entry point is 0x4037549c[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (254) cpu_start: Pro cpu start user code[0m
+[0;32mI (254) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (254) cpu_start: Application information:[0m
+[0;32mI (255) cpu_start: Project name:     hello_world[0m
+[0;32mI (259) cpu_start: App version:      41496e7-dirty[0m
+[0;32mI (263) cpu_start: Compile time:     Apr  3 2025 16:32:45[0m
+[0;32mI (268) cpu_start: ELF file SHA256:  e06ed229...[0m
+[0;32mI (273) cpu_start: ESP-IDF:          v5.1.2[0m
+[0;32mI (277) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (280) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (284) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (288) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (294) heap_init: At 3FC9EA08 len 0004AD08 (299 KiB): DRAM[0m
+[0;32mI (300) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (305) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (310) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (317) spi_flash: detected chip: gd[0m
+[0;32mI (319) spi_flash: flash io: dio[0m
+[0;32mI (322) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (328) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (334) app_start: Starting scheduler on CPU0[0m
+[0;32mI (338) app_start: Starting scheduler on CPU1[0m
+[0;32mI (338) main_task: Started on CPU0[0m
+[0;32mI (348) main_task: Calling app_main()[0m
+Inicio de main
+Lanzamos wifi_conect()
+[0;32mI (378) wifi_conect: Usando IP estática: 192.168.18.250[0m
+[0;32mI (378) pp: pp rom version: e7ae62f[0m
+[0;32mI (378) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (388) wifi:wifi driver task: 3fca8ba4, prio:23, stack:6656, core=0[0m
+[0;32mI (398) wifi:wifi firmware version: 91b9630[0m
+[0;32mI (398) wifi:wifi certification version: v7.0[0m
+[0;32mI (398) wifi:config NVS flash: enabled[0m
+[0;32mI (398) wifi:config nano formating: disabled[0m
+[0;32mI (398) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (408) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (408) wifi:Init management short buffer num: 32[0m
+[0;32mI (418) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (418) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (428) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (428) wifi:Init static rx buffer num: 10[0m
+[0;32mI (428) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (438) wifi_init: rx ba win: 6[0m
+[0;32mI (438) wifi_init: tcpip mbox: 32[0m
+[0;32mI (438) wifi_init: udp mbox: 6[0m
+[0;32mI (448) wifi_init: tcp mbox: 6[0m
+[0;32mI (448) wifi_init: tcp tx win: 5744[0m
+[0;32mI (448) wifi_init: tcp rx win: 5744[0m
+[0;32mI (458) wifi_init: tcp mss: 1440[0m
+[0;32mI (458) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (458) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (468) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13[0m
+[0;32mI (508) wifi:mode : sta (dc:da:0c:57:09:38)[0m
+[0;32mI (508) wifi:enable tsf[0m
+[0;32mI (508) wifi_conect: Connecting to WiFi...[0m
+[0;33mW (2918) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (5328) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (7738) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (10148) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (12558) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (14968) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (17378) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (19788) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (22198) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (24608) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (27018) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (29428) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (31838) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (34248) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (36658) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (39068) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (41478) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (43888) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (46298) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (48708) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (51118) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (53528) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (55938) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (58348) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (60758) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (63168) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (65578) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (67988) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (70398) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (72808) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (75218) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (77628) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (80038) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (82448) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (84858) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (87268) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (89678) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (92088) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (94498) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (96908) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (99318) wifi_conect: Disconnected, reason: 201[0m
+[1;31mE (100508) wifi_conect: Failed to connect.[0m
+Regresamos al main...
+Consultamos la ip
+[0;33mW (100508) wifi:Haven't to connect to a suitable AP now![0m
+[0;33mW (100508) wifi_conect: No conectado. No se puede obtener IP.[0m
+Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x400556d5  PS      : 0x00060a30  A0      : 0x82070b8e  A1      : 0x3fca22d0  
+A2      : 0x00000000  A3      : 0xfffffffc  A4      : 0x000000ff  A5      : 0x0000ff00  
+A6      : 0x00ff0000  A7      : 0xff000000  A8      : 0x00000000  A9      : 0x3fca2290  
+A10     : 0x3fca22b0  A11     : 0x00000000  A12     : 0x00060620  A13     : 0x0000000c  
+A14     : 0xffffffef  A15     : 0x00000001  SAR     : 0x00000004  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000000  LBEG    : 0x400556d5  LEND    : 0x400556e5  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x400556d2:0x3fca22d0 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: e06ed229
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375868
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1450
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (26) boot: ESP-IDF v5.1.2 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Apr  3 2025 16:32:57[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.2[0m
+[0;32mI (29) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (33) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c080020 size=18b54h (101204) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=00028b7c vaddr=3fc96c00 size=044a8h ( 17576) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0002d02c vaddr=40374000 size=02fech ( 12268) load[0m
+[0;32mI (110) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=7f1f4h (520692) map[0m
+[0;32mI (207) esp_image: segment 4: paddr=000af21c vaddr=40376fec size=0fbf0h ( 64496) load[0m
+[0;32mI (230) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (230) boot: Disabling RNG early entropy source...[0m
+[0;32mI (239) cpu_start: Multicore app[0m
+[0;32mI (240) cpu_start: Pro cpu up.[0m
+[0;32mI (240) cpu_start: Starting app cpu, entry point is 0x4037549c[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (254) cpu_start: Pro cpu start user code[0m
+[0;32mI (254) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (254) cpu_start: Application information:[0m
+[0;32mI (255) cpu_start: Project name:     hello_world[0m
+[0;32mI (259) cpu_start: App version:      41496e7-dirty[0m
+[0;32mI (263) cpu_start: Compile time:     Apr  3 2025 16:32:45[0m
+[0;32mI (268) cpu_start: ELF file SHA256:  e06ed229...[0m
+[0;32mI (273) cpu_start: ESP-IDF:          v5.1.2[0m
+[0;32mI (277) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (280) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (284) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (288) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (294) heap_init: At 3FC9EA08 len 0004AD08 (299 KiB): DRAM[0m
+[0;32mI (300) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (305) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (310) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (317) spi_flash: detected chip: gd[0m
+[0;32mI (319) spi_flash: flash io: dio[0m
+[0;32mI (322) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (328) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (334) app_start: Starting scheduler on CPU0[0m
+[0;32mI (338) app_start: Starting scheduler on CPU1[0m
+[0;32mI (338) main_task: Started on CPU0[0m
+[0;32mI (348) main_task: Calling app_main()[0m
+Inicio de main
+Lanzamos wifi_conect()
+[0;32mI (378) wifi_conect: Usando IP estática: 192.168.18.250[0m
+[0;32mI (378) pp: pp rom version: e7ae62f[0m
+[0;32mI (378) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (388) wifi:wifi driver task: 3fca8ba4, prio:23, stack:6656, core=0[0m
+[0;32mI (398) wifi:wifi firmware version: 91b9630[0m
+[0;32mI (398) wifi:wifi certification version: v7.0[0m
+[0;32mI (398) wifi:config NVS flash: enabled[0m
+[0;32mI (398) wifi:config nano formating: disabled[0m
+[0;32mI (398) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (408) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (408) wifi:Init management short buffer num: 32[0m
+[0;32mI (418) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (418) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (428) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (428) wifi:Init static rx buffer num: 10[0m
+[0;32mI (428) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (438) wifi_init: rx ba win: 6[0m
+[0;32mI (438) wifi_init: tcpip mbox: 32[0m
+[0;32mI (438) wifi_init: udp mbox: 6[0m
+[0;32mI (448) wifi_init: tcp mbox: 6[0m
+[0;32mI (448) wifi_init: tcp tx win: 5744[0m
+[0;32mI (448) wifi_init: tcp rx win: 5744[0m
+[0;32mI (458) wifi_init: tcp mss: 1440[0m
+[0;32mI (458) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (458) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (468) phy_init: phy_version 620,ec7ec30,Sep  5 2023,13:49:13[0m
+[0;32mI (508) wifi:mode : sta (dc:da:0c:57:09:38)[0m
+[0;32mI (508) wifi:enable tsf[0m
+[0;32mI (508) wifi_conect: Connecting to WiFi...[0m
+[0;33mW (2918) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (5328) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (7738) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (10148) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (12558) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (14968) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (17378) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (19788) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (22198) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (24608) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (27018) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (29428) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (31838) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (34248) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (36658) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (39068) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (41478) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (43888) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (46298) wifi_conect: Disconnected, reason: 201[0m
+[0;33mW (48708) wifi_conect: Disconnected, reason: 201[0m

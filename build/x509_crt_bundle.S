@@ -1,4 +1,4 @@
-/* * Data converted from /home/david/esp/wifi01/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /home/david/esp/ESP32-s3_wifi_conect/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

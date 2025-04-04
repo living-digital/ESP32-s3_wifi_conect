@@ -1,0 +1,40 @@
+[0;33m--- esp-idf-monitor 1.6.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40048836: uart_tx_one_char_uart in ROM
+[0m
+[0;33m--- 0x4037549c: call_start_cpu1 at /home/david/esp/esp-idf/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+--- 0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x400556d2: strlen in ROM
+[0m
+[0;33m--- 0x40375868: esp_restart_noos_dig at /home/david/esp/esp-idf/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m--- 0x4037549c: call_start_cpu1 at /home/david/esp/esp-idf/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+--- 0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x400556d2: strlen in ROM
+[0m
+[0;33m--- 0x40375868: esp_restart_noos_dig at /home/david/esp/esp-idf/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m--- 0x4037549c: call_start_cpu1 at /home/david/esp/esp-idf/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+--- 0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x400556d2: strlen in ROM
+[0m
+[0;33m--- 0x40375868: esp_restart_noos_dig at /home/david/esp/esp-idf/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m--- 0x4037549c: call_start_cpu1 at /home/david/esp/esp-idf/components/esp_system/port/cpu_start.c:157
+[0m
+[0m

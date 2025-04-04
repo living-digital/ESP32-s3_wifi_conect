@@ -1,4 +1,4 @@
-# Install script for directory: /home/david/esp/wifi01/components/wifi_conect
+# Install script for directory: /home/david/esp/ESP32-s3_wifi_conect/components/wifi_conect
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

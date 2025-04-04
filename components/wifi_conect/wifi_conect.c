@@ -9,6 +9,10 @@
 #include "esp_system.h"
 #include "esp_err.h"
 #include "esp_netif_ip_addr.h"
+#include "esp_wifi.h"
+#include "wifi_conect.h"
+
+
 
 
 static const char *TAG = "wifi_conect";
@@ -94,7 +98,7 @@ esp_err_t wifi_conect(const char *ssid, const char *password, const char *ip, co
         WIFI_CONNECTED_BIT,
         pdFALSE, 
         pdTRUE, 
-        pdMS_TO_TICKS(100000)
+        pdMS_TO_TICKS(100000) // tiempo maximo de espera en milisegundos para conectar
     );
 
     if (bits & WIFI_CONNECTED_BIT) {
@@ -127,12 +131,18 @@ esp_err_t wifi_conect(const char *ssid, const char *password, const char *ip, co
 }
 
 
-// Devuelve la IP actual.
+// Devuelve la IP actual si estamos conectados
 const char* wifi_conect_get_ip(void)
 {
-    static char ip_str[16]; // espacio para IP tipo "xxx.xxx.xxx.xxx"
-    esp_netif_t* netif = esp_netif_get_handle_from_ifkey("WIFI_STA_DEF");
+    static char ip_str[16]; // espacio para "xxx.xxx.xxx.xxx"
 
+    // Verificar si estamos conectados
+    if (!wifi_conect_is_connected()) {
+        ESP_LOGW(TAG, "No conectado. No se puede obtener IP.");
+        return NULL;
+    }
+
+    esp_netif_t* netif = esp_netif_get_handle_from_ifkey("WIFI_STA_DEF");
     if (netif == NULL) {
         ESP_LOGW(TAG, "No se pudo obtener el handle de la interfaz STA");
         return NULL;
@@ -146,6 +156,19 @@ const char* wifi_conect_get_ip(void)
 
     esp_ip4addr_ntoa(&ip_info.ip, ip_str, sizeof(ip_str));
     return ip_str;
+}
+
+
+
+// Indica si estamos conectados a una red wifi
+bool wifi_conect_is_connected(void)
+{
+    wifi_ap_record_t ap_info;
+    if (esp_wifi_sta_get_ap_info(&ap_info) == ESP_OK) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
