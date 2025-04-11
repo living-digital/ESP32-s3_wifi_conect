@@ -1,20 +1,21 @@
 #include <string.h>
+#include <stdio.h>
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
+
+#include "lwip/netdb.h"
+#include "lwip/sockets.h"
+
 #include "esp_event.h"
 #include "esp_log.h"
-#include "esp_wifi.h"
 #include "esp_netif.h"
 #include "nvs_flash.h"
-#include "string.h"
 #include "esp_system.h"
 #include "esp_err.h"
 #include "esp_netif_ip_addr.h"
 #include "esp_wifi.h"
 #include "wifi_conect.h"
-
-
 
 
 static const char *TAG = "wifi_conect";
@@ -39,7 +40,13 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base,
 
 
 // Función principal para conectarse a WiFi con o sin IP estática
-esp_err_t wifi_conect(const char *ssid, const char *password, const char *ip, const char *gw, const char *netmask)
+esp_err_t wifi_conect(
+        const char *ssid, 
+        const char *password,
+        const char *ip, 
+        const char *gw, 
+        const char *netmask,
+        const char *dns) // ⚠️ Parametro opcional
 {
     esp_err_t ret;
 
@@ -68,8 +75,15 @@ esp_err_t wifi_conect(const char *ssid, const char *password, const char *ip, co
         ESP_ERROR_CHECK(esp_netif_str_to_ip4(netmask, &ip_info.netmask));
         ESP_ERROR_CHECK(esp_netif_dhcpc_stop(sta_netif));
         ESP_ERROR_CHECK(esp_netif_set_ip_info(sta_netif, &ip_info));
-    } else {
-        ESP_LOGI(TAG, "Usando DHCP");
+
+        // ⚠️ Configurar DNS si se proporciona
+        if (dns) {
+            esp_netif_dns_info_t dns_info;
+            dns_info.ip.u_addr.ip4.addr = ipaddr_addr(dns);
+            dns_info.ip.type = IPADDR_TYPE_V4;
+            ESP_ERROR_CHECK(esp_netif_set_dns_info(sta_netif, ESP_NETIF_DNS_MAIN, &dns_info));
+            ESP_LOGI(TAG, "DNS configurado manualmente: %s", dns);
+        }
     }
 
     // Inicializar WiFi
@@ -171,6 +185,92 @@ bool wifi_conect_is_connected(void)
     } else {
         return false;
     }
+}
+
+// Indica si hay acceso a internet conectando con 8.8.8.8
+bool internet_connected_ip(void) {
+    int sock;
+    struct sockaddr_in server_addr;
+    const char *server_ip = "8.8.8.8";  // Puedes usar la IP de Google DNS, por ejemplo.
+    int port = 53; // Utilizamos el puerto 53 (DNS).
+    struct timeval timeout = {5, 0};  // 5 segundos de timeout.
+
+    // Crear el socket
+    sock = socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
+    if (sock < 0) {
+        ESP_LOGE(TAG, "Error al crear el socket");
+        return false;
+    }
+
+    // Configuramos los tiempos de espera (envío y recepción)
+    setsockopt(sock, SOL_SOCKET, SO_SNDTIMEO, &timeout, sizeof(timeout));
+    setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout));
+
+    memset(&server_addr, 0, sizeof(server_addr));
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(port);
+    if (inet_aton(server_ip, &server_addr.sin_addr) == 0) {
+        ESP_LOGE(TAG, "IP inválida: %s", server_ip);
+        close(sock);
+        return false;
+    }
+
+    // Intentar conectarse al servidor
+    if (connect(sock, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) {
+        ESP_LOGE(TAG, "Fallo en la conexión a %s en el puerto %d", server_ip, port);
+        close(sock);
+        return false;
+    }
+
+    ESP_LOGI(TAG, "Conexión exitosa a %s en el puerto %d", server_ip, port);
+    close(sock);
+    return true;
+}
+
+// Verifica si hay acceso a internet conectando con google.com
+bool internet_connected_dns(void)
+{
+    const char *host = "google.com";
+    const int port = 80;
+    struct sockaddr_in dest_addr;
+    struct hostent *he;
+    int sock;
+    struct timeval timeout = {5, 0};  // timeout de 5 segundos
+
+    ESP_LOGI(TAG, "Resolviendo DNS para %s...", host);
+    he = gethostbyname(host);
+    if (he == NULL || he->h_addr_list[0] == NULL) {
+        ESP_LOGW(TAG, "No se pudo resolver el host: %s", host);
+        return false;
+    }
+
+    // Configurar dirección destino
+    memset(&dest_addr, 0, sizeof(dest_addr));
+    dest_addr.sin_family = AF_INET;
+    dest_addr.sin_port = htons(port);
+    memcpy(&dest_addr.sin_addr, he->h_addr_list[0], he->h_length);
+
+    // Crear socket
+    sock = socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
+    if (sock < 0) {
+        ESP_LOGE(TAG, "Error al crear el socket");
+        return false;
+    }
+
+    // Tiempo de espera
+    setsockopt(sock, SOL_SOCKET, SO_SNDTIMEO, &timeout, sizeof(timeout));
+    setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout));
+
+    // Intentar conexión
+    if (connect(sock, (struct sockaddr *)&dest_addr, sizeof(dest_addr)) < 0) {
+        ESP_LOGW(TAG, "No se pudo conectar con %s:%d", host, port);
+        close(sock);
+        return false;
+    }
+
+    ESP_LOGI(TAG, "Conexión exitosa con %s:%d", host, port);
+    close(sock);
+    return true;
 }
 
 
