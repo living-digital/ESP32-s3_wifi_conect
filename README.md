@@ -81,3 +81,4 @@ Patch (Z) – Corrección de errores o mejoras menores:Se incrementa cuando hace
 Desarrollado con ESP-IDF para ESP32-S3
  
  
+ 
